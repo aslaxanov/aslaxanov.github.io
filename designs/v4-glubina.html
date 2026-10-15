@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант 4 — Глубина</title>
+<script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("fx");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root { --bg: #0b0d0c; --tile: #141816; --tile2: #1b201d; --text: #eef2ef; --muted: #8d978f; --line: #232a26; --mint: #9fe3c1; --mint-ink: #08130d; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 "Onest", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.u { font-family: "Unbounded", sans-serif; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 12px; }
+.lbl { font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+[data-progress] { background: var(--mint); }
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; }
+nav b { font: 600 .95rem "Unbounded"; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 14px; background: var(--mint); color: var(--mint-ink); font-weight: 600; text-decoration: none; }
+nav .btn { padding: 10px 18px; border-radius: 10px; font-size: .9rem; }
+
+.tile { position: relative; background: var(--tile); border: 1px solid var(--line); border-radius: 24px; padding: 24px; overflow: hidden; }
+.tile::after { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), rgb(159 227 193 / .10), transparent 60%); pointer-events: none; }
+.tile.img { padding: 0; }
+.tile.img img { width: 100%; height: 100%; object-fit: cover; }
+.tile .cap { position: absolute; left: 20px; right: 20px; bottom: 18px; font: 600 1.1rem/1.3 "Unbounded"; }
+
+.bento { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+.b-main { grid-column: 1 / -1; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: 440px; background: radial-gradient(120% 120% at 0% 0%, #1f3a2e 0%, var(--tile) 55%); }
+.b-main h1 { font: 800 clamp(2.2rem, 6.4vw, 5.2rem)/.98 "Unbounded"; letter-spacing: -.03em; margin: 0; text-transform: uppercase; }
+.b-main h1 span.m { color: var(--mint); }
+.b-main p { color: var(--muted); max-width: 460px; margin: 0 0 20px; }
+.b-photo { grid-column: 1 / -1; min-height: 420px; }
+.b-stat .num { font: 800 clamp(2.6rem, 6vw, 4.4rem)/1 "Unbounded"; color: var(--mint); margin-top: 32px; }
+.b-wide { grid-column: 1 / -1; min-height: 260px; }
+.b-price { background: var(--mint); color: var(--mint-ink); }
+.b-price .lbl { color: #2f5a44; }
+.b-price .num { color: var(--mint-ink); }
+
+.marquee { overflow: hidden; padding: 28px 0; }
+.marquee div { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+.marquee span { font: 800 clamp(2rem, 6vw, 4.5rem)/1 "Unbounded"; text-transform: uppercase; padding-right: 40px; color: transparent; -webkit-text-stroke: 1px #3b4740; white-space: nowrap; }
+.marquee span:nth-child(3n+1) { color: var(--text); -webkit-text-stroke: 0; }
+
+.sec { padding: clamp(64px, 9vw, 120px) 0; }
+.sec h2 { font: 800 clamp(1.8rem, 4.6vw, 3.6rem)/1.02 "Unbounded"; text-transform: uppercase; letter-spacing: -.02em; margin: 14px 0 0; }
+.sec-head { padding: 0 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 32px; }
+
+[data-hscroll] .track { gap: 12px; padding: 0 12px; }
+.h-card { width: min(80vw, 380px); height: min(64vh, 480px); flex: none; display: flex; flex-direction: column; justify-content: space-between; }
+.h-card .n { font: 800 6.5rem/.8 "Unbounded"; color: transparent; -webkit-text-stroke: 1.5px var(--mint); }
+.h-card h3 { font: 600 1.4rem/1.2 "Unbounded"; margin: 0 0 10px; }
+.h-card p { color: var(--muted); margin: 0; }
+.h-card q { display: block; margin-top: 14px; color: var(--mint); font-size: .92rem; }
+.h-card.accent { background: var(--mint); color: var(--mint-ink); } .h-card.accent .n { -webkit-text-stroke-color: var(--mint-ink); } .h-card.accent p, .h-card.accent q { color: #24432f; }
+
+.results { display: grid; gap: 10px; grid-template-columns: 1fr; }
+.res { display: flex; flex-direction: column; gap: 18px; min-height: 280px; }
+.res header { display: flex; align-items: center; gap: 12px; }
+.res header img, .res .letter { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.res .letter { display: grid; place-items: center; background: var(--tile2); color: var(--mint); font: 600 1rem "Unbounded"; }
+.res header span { display: block; color: var(--muted); font-size: .82rem; }
+.res .big { font: 800 clamp(2rem, 4vw, 2.8rem)/1 "Unbounded"; color: var(--mint); margin-top: auto; }
+.res p { margin: 0; color: var(--muted); }
+.res.quote .big { font: 600 1.25rem/1.35 "Unbounded"; color: var(--text); }
+
+.final { text-align: center; padding: clamp(80px, 12vw, 160px) 20px; position: relative; overflow: hidden; }
+.final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .28; }
+.final h2 { position: relative; font: 800 clamp(2.6rem, 10vw, 8rem)/.92 "Unbounded"; text-transform: uppercase; letter-spacing: -.04em; margin: 0 0 40px; }
+.circle { position: relative; display: inline-grid; place-items: center; width: 170px; height: 170px; border-radius: 50%; background: var(--mint); color: var(--mint-ink); text-decoration: none; font: 600 .95rem/1.2 "Unbounded"; text-align: center; padding: 20px; }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 24px 20px 40px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+
+@media (min-width: 900px) {
+  .wrap { padding: 0 20px; } nav { padding: 20px 28px; }
+  .bento { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(150px, auto); }
+  .b-main { grid-column: span 3; grid-row: span 2; min-height: 520px; }
+  .b-photo { grid-column: span 1; grid-row: span 3; min-height: 0; }
+  .b-wide { grid-column: 1 / -1; min-height: 340px; }
+  .results { grid-template-columns: repeat(3, 1fr); }
+  .res.span2 { grid-column: span 2; }
+  [data-hscroll] .track { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+<div data-progress></div>
+<nav><b>ШАМИЛЬ АСЛАХАНОВ</b><a class="btn" href="https://t.me/USERNAME">Telegram ↗</a></nav>
+
+<main class="wrap">
+  <section class="bento">
+    <div class="tile b-main" data-spot data-reveal>
+      <span class="lbl">Мастер-группа · старт в ноябре</span>
+      <div>
+        <h1 data-split="0.1">Разберись <span class="m">в себе</span> за 3 месяца</h1>
+      </div>
+      <div>
+        <p>Я учу видеть причинно-следственные связи в себе: почему ты действуешь и чувствуешь именно так — и как управлять собой.</p>
+        <a class="btn" href="https://t.me/USERNAME" data-magnetic>Записаться в Telegram →</a>
+      </div>
+    </div>
+    <div class="tile img b-photo" data-reveal="clip" data-delay="0.15"><img src="../img/shamil-2.jpg" alt="Шамиль Аслаханов" style="object-position:50% 30%"><span class="cap">Шамиль Аслаханов<br><span class="lbl" style="color:var(--mint)">Психолог</span></span></div>
+    <div class="tile b-stat" data-spot data-reveal data-delay="0.2"><span class="lbl">Основ в программе</span><div class="num" data-count="12">12</div></div>
+    <div class="tile b-stat" data-spot data-reveal data-delay="0.3"><span class="lbl">Людей в вип-чате</span><div class="num"><span data-count="125">125</span>+</div></div>
+    <div class="tile b-stat b-price" data-reveal data-delay="0.3"><span class="lbl">Стоимость</span><div class="num" style="font-size:clamp(1.8rem,3.4vw,2.6rem)"><span data-count="100000">100 000</span> ₽</div></div>
+    <div class="tile img b-wide" data-reveal="clip" data-delay="0.2"><img src="https://images.unsplash.com/photo-1568955608373-b6ae0409ec93?w=1400&q=70&auto=format&fit=crop" alt=""><span class="cap">Понимать себя — и действовать осознанно</span></div>
+  </section>
+</main>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Ясность</span><span>Осознанность</span><span>Система</span><span>Ясность</span><span>Осознанность</span><span>Система</span>
+  <span>Ясность</span><span>Осознанность</span><span>Система</span><span>Ясность</span><span>Осознанность</span><span>Система</span>
+</div></div>
+
+<section class="sec" style="padding-bottom:0">
+  <div class="wrap"><div class="sec-head"><div><span class="lbl">Программа</span><h2 data-split>12 основ</h2></div><span class="lbl">Листай вниз →</span></div></div>
+  <div data-hscroll>
+    <div class="sticky"><div class="track">
+      <div class="tile h-card" data-spot><span class="n">01</span><div><h3>Потребности</h3><p>Всё, что человек делает, идёт от потребностей.</p><q>Зачем мы их закрываем?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">02</span><div><h3>Цель — счастье</h3><p>Итог один — целостность и покой.</p><q>Откуда тогда тревоги?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">03</span><div><h3>Неопределённость</h3><p>Человек рождается в неопределённости.</p><q>Можем ли мы стать стабильными?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">04</span><div><h3>Нестабильность</h3><p>Настроение, эмоции, энергия колеблются.</p><q>Значит, мы уязвимы?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">05</span><div><h3>Уязвимость</h3><p>Мы защищаем её масками.</p><q>Как ориентироваться в хаосе?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">06</span><div><h3>Эмоция — компас</h3><p>Встроенные указатели внимания.</p><q>Из чего я состою?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">07</span><div><h3>Мы из частей</h3><p>Тело, мысли, эмоции, внимание.</p><q>Как управлять собой?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">08</span><div><h3>Устройство</h3><p>Контроль — только через знание.</p><q>Есть ли общий порядок?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">09</span><div><h3>Порядок</h3><p>Мир устроен закономерно.</p><q>Как принимать решения?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">10</span><div><h3>Решения</h3><p>«Ничего не делаю» — тоже решение.</p><q>Что внутри человека?</q></div></div>
+      <div class="tile h-card" data-spot><span class="n">11</span><div><h3>Профайлинг</h3><p>Внешнее отражает внутреннее.</p><q>Как различать понятия?</q></div></div>
+      <div class="tile h-card accent"><span class="n">12</span><div><h3>Ясность</h3><p>Разделение понятий и понимание их сути. Лестница завершена.</p></div></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="lbl">Результаты учеников</span><h2 data-split>Было → стало</h2></div></div>
+    <div class="results" data-stagger>
+      <div class="tile res span2" data-spot><header><img src="../img/elina.jpg" alt=""><div><b>Элина</b><span>3-месячная мастер-группа</span></div></header><p>Не признавала своих сильных сторон, сомневалась в работе и в отношениях с близкими.</p><div class="big">+2,5 млн ₽ продаж за первый месяц</div></div>
+      <div class="tile res" data-spot><header><img src="../img/ilmir.jpg" alt=""><div><b>Ильмир</b><span>@s_ilmirr</span></div></header><p>Неуверенность и расфокус.</p><div class="big">1,6 млн ₽</div></div>
+      <div class="tile res quote" data-spot><header><span class="letter">H</span><div><b>Hadija</b><span>отношения с отцом, брак</span></div></header><div class="big">«Пришла ясность и понимание, в какую сторону двигаться»</div></div>
+      <div class="tile res" data-spot><header><img src="../img/devlet.jpg" alt=""><div><b>Devlet</b><span>@devlet_turkmen</span></div></header><p>Часто выгорал, не позволял себе отдых.</p><div class="big">5 → 40 тыс.$</div></div>
+      <div class="tile res" data-spot><header><img src="../img/rafail.jpg" alt=""><div><b>Рафаил</b><span>@rafail_sh</span></div></header><p>Неопределённость в финансах и в браке.</p><div class="big">Своё дело</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <img src="https://images.unsplash.com/photo-1503786482448-3351db7b0f93?w=2000&q=70&auto=format&fit=crop" alt="" data-zoom-out>
+  <h2 data-split>Тебе нужна ясность</h2>
+  <a class="circle" href="https://t.me/USERNAME" data-magnetic>Написать в Telegram ↗</a>
+</section>
+
+<footer><span>© 2026 Шамиль Аслаханов · Психолог</span><a href="https://t.me/USERNAME">Telegram ↗</a></footer>
+
+<script src="../vendor/motion.js"></script>
+<script src="fx.js"></script>
+</body>
+</html>

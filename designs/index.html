@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Варианты дизайна</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #f1f0ec; --ink: #151515; --muted: #6b6a66; --line: #d9d7d0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 "Inter Tight", system-ui, sans-serif; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 48px 20px 80px; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.03em; margin: 0 0 8px; }
+.sub { color: var(--muted); margin: 0 0 40px; }
+.grid { display: grid; gap: 24px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+.frame { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #ddd; }
+.frame iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; pointer-events: none; }
+.body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.body h2 { margin: 0; font-size: 1.4rem; letter-spacing: -.02em; }
+.body p { margin: 0; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { font-size: .78rem; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+.open { margin-top: auto; align-self: flex-start; background: var(--ink); color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 600; }
+@media (min-width: 860px) { .wrap { padding: 64px 40px 96px; } .grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>4 варианта дизайна</h1>
+  <p class="sub">Открой каждый и пролистай до конца — главные эффекты появляются при скролле. Выбери один (или смешай), и соберём полный сайт.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="frame"><iframe src="v1-tishina.html" loading="lazy" title="Вариант 1"></iframe></div>
+      <div class="body"><h2>1 · Тишина</h2><p>Тёмный, кинематографичный. Туманное море на весь экран, крупный антиква-шрифт, фото Шамиля во вращающемся бейдже, отзывы-карточки, которые складываются стопкой при скролле.</p><div class="tags"><span>тёмный</span><span>премиум</span><span>спокойный</span></div><a class="open" href="v1-tishina.html">Открыть →</a></div>
+    </article>
+    <article class="card">
+      <div class="frame"><iframe src="v2-yasnost.html" loading="lazy" title="Вариант 2"></iframe></div>
+      <div class="body"><h2>2 · Ясность</h2><p>Светлый редакционный стиль как на твоём скрине: моно-цифры 01–12, синий акцент, коллаж фото, программа с заливкой при наведении, отзывы едут горизонтально при прокрутке вниз.</p><div class="tags"><span>светлый</span><span>строгий</span><span>структурный</span></div><a class="open" href="v2-yasnost.html">Открыть →</a></div>
+    </article>
+    <article class="card">
+      <div class="frame"><iframe src="v3-rassvet.html" loading="lazy" title="Вариант 3"></iframe></div>
+      <div class="body"><h2>3 · Рассвет</h2><p>Тёплый, под его закатное фото. Плавающие «пятна» света, фото в форме арки, стеклянные плашки «Апатия / Тревога / Хаос → Ясность», линия программы заполняется при скролле.</p><div class="tags"><span>тёплый</span><span>мягкий</span><span>женская аудитория</span></div><a class="open" href="v3-rassvet.html">Открыть →</a></div>
+    </article>
+    <article class="card">
+      <div class="frame"><iframe src="v4-glubina.html" loading="lazy" title="Вариант 4"></iframe></div>
+      <div class="body"><h2>4 · Глубина</h2><p>Смелый тёмный «бенто»: плитки с цифрами, мятный акцент, подсветка за курсором, 12 основ листаются вбок при скролле, большая круглая кнопка в финале.</p><div class="tags"><span>тёмный</span><span>современный</span><span>мужская аудитория</span></div><a class="open" href="v4-glubina.html">Открыть →</a></div>
+    </article>
+  </div>
+</div>
+<script>
+const fit = () => document.querySelectorAll(".frame").forEach((f) => { f.querySelector("iframe").style.transform = `scale(${f.clientWidth / 1440})`; });
+fit(); addEventListener("resize", fit);
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.fx [data-reveal]:not([data-reveal="clip"]), .fx [data-stagger] > *, .fx [data-split] { opacity: 0; }
+.fx [data-reveal="clip"] { clip-path: inset(100% 0 0 0); }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.w > span { display: inline-block; }
+[data-progress] { position: fixed; inset: 0 0 auto; height: 2px; transform-origin: 0 50%; transform: scaleX(0); z-index: 100; }
+[data-hscroll] .sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; }
+[data-hscroll] .track { display: flex; will-change: transform; }
+html:not(.fx) [data-hscroll] { height: auto !important; }
+html:not(.fx) [data-hscroll] .sticky { position: static; height: auto; overflow-x: auto; }
+@keyframes kenburns { from { transform: scale(1.12) translate(0, 0); } to { transform: scale(1) translate(-1.5%, 1%); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes drift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6%, -8%) scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
