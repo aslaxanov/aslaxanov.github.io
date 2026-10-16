@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Вариант 4 — Стикеры</title>
+<meta name="description" content="Мастер-группа психолога Шамиля Аслаханова: 3 месяца, 30 мест, больше 100 часов работы вместе.">
+<meta property="og:title" content="Шамиль Аслаханов — мастер-группа «Ясность»">
+<meta property="og:description" content="3 месяца, 30 мест. Разберись в себе, научись понимать людей и вырасти в деньгах.">
+<meta property="og:image" content="https://tashnurik.github.io/shamil-site/img/shamil-3.jpg">
+<meta name="theme-color" content="#0b0d0c">
+<script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !location.search.includes("static")) document.documentElement.classList.add("fx");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../designs/fx.css">
+<link rel="stylesheet" href="base.css">
+<style>
+.stk { filter: drop-shadow(4px 0 0 #fff) drop-shadow(-4px 0 0 #fff) drop-shadow(0 4px 0 #fff) drop-shadow(0 -4px 0 #fff) drop-shadow(0 18px 24px rgb(0 0 0 / .5)); transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+.stk:hover { transform: rotate(0deg) scale(1.04) !important; }
+.hero { padding: 32px 0 24px; position: relative; }
+.hero-grid { display: grid; gap: 24px; align-items: center; }
+.hero .h1 { position: relative; }
+.hero .h1 .hl { position: relative; white-space: nowrap; }
+.hero .h1 .hl svg { position: absolute; left: -2%; bottom: -14%; width: 104%; height: 40%; stroke: var(--mint); fill: none; stroke-width: 6; stroke-linecap: round; }
+.hero .lead { margin: 22px 0 26px; }
+.stage { position: relative; min-height: 440px; }
+.stage .blob { position: absolute; inset: 8% 6% 0; border-radius: 42% 58% 50% 50% / 50% 45% 55% 50%; background: var(--mint); animation: morph 12s ease-in-out infinite; }
+@keyframes morph { 50% { border-radius: 58% 42% 45% 55% / 45% 58% 42% 55%; } }
+.stage .main-stk { position: absolute; bottom: 0; left: 50%; translate: -50% 0; width: min(92%, 500px); height: auto; rotate: -3deg; }
+.tagstk { position: absolute; z-index: 3; padding: 10px 16px; border-radius: 14px; font: 700 .85rem "Unbounded"; box-shadow: 0 0 0 3px #fff, 0 14px 24px rgb(0 0 0 / .4); animation: bob 5s ease-in-out infinite; }
+.t1 { background: var(--tile); color: var(--text); top: 6%; left: 0; rotate: -8deg; }
+.t2 { background: #fff; color: var(--mint-ink); top: 40%; right: 0; rotate: 6deg; animation-delay: -2s; }
+.t3 { background: var(--mint-ink); color: var(--mint); bottom: 10%; left: 4%; rotate: 4deg; animation-delay: -3.5s; }
+@keyframes bob { 50% { translate: 0 -8px; } }
+.side-stk { display: none; }
+.deck-wrap { display: grid; gap: 32px; align-items: center; }
+.deck { position: relative; width: min(78vw, 300px); aspect-ratio: 461 / 818; margin: 0 auto; }
+.deck .shot { position: absolute; inset: 0; box-shadow: 0 0 0 4px #fff, 0 24px 40px rgb(0 0 0 / .5); }
+.deck-ctrl { display: flex; gap: 10px; align-items: center; }
+.deck-ctrl span { font-variant-numeric: tabular-nums; color: var(--muted); }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.15fr 1fr; }
+  .stage { min-height: 600px; }
+  .side-stk { display: block; position: absolute; width: 150px; right: 3%; top: -170px; rotate: 6deg; z-index: 2; }
+  .deck-wrap { grid-template-columns: 1fr 1fr; }
+  .deck { width: 320px; }
+}
+</style>
+</head>
+<body>
+<div data-progress></div>
+<nav class="nav"><b>ШАМИЛЬ АСЛАХАНОВ</b><div class="links"><a href="#give">Что даю</a><a href="#format">Формат</a><a href="#who">Кому</a><a href="#program">Программа</a><a href="#cases">Кейсы</a><a href="#book">Запись</a></div><a class="btn btn-sm" href="https://t.me/Aslaxanov?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20%C2%AB%D0%AF%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%C2%BB." target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Записаться</a></nav>
+<header class="hero" data-hero><div class="wrap hero-grid">
+  <div>
+    <span class="lbl" data-reveal>Мастер-группа · Ноябрь 2026 · 30 мест</span>
+    <h1 class="h1" data-split="0.1" style="margin-top:14px">Разберись <span class="hl">в себе<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 50 4, 120 4, 197 12"/></svg></span> за 3 месяца</h1>
+    <p class="lead" data-reveal data-delay="0.4">Найду твои сильные стороны, на которых ты вырастешь в деньгах ×2–3, и научу понимать людей по мимике, жестам и интонации.</p>
+    <div class="btns" data-reveal data-delay="0.6"><a class="btn shine" href="https://t.me/Aslaxanov?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20%C2%AB%D0%AF%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%C2%BB." target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a><a class="btn btn-ghost" href="https://t.me/aslaxanovv" target="_blank" rel="noopener">Мой ТГ-канал ↗</a></div>
+  </div>
+  <div class="stage" data-reveal>
+    <div class="blob"></div>
+    <img class="stk main-stk" src="../img/photos/sticker3.png" alt="Шамиль Аслаханов">
+    <span class="tagstk t1">Психолог ✦</span>
+    <span class="tagstk t2">Профайлинг</span>
+    <span class="tagstk t3">30 мест</span>
+  </div>
+</div></header>
+<div class="wrap"><div class="stats" data-stagger>
+  <div class="tile" data-spot><span class="lbl">Мест в потоке</span><div class="num" data-count="30">30</div></div>
+  <div class="tile" data-spot><span class="lbl">Месяца</span><div class="num" data-count="3">3</div></div>
+  <div class="tile" data-spot><span class="lbl">Часов со мной</span><div class="num"><span data-count="100">100</span>+</div></div>
+  <div class="tile" data-spot><span class="lbl">Основ в программе</span><div class="num" data-count="12">12</div></div>
+</div></div>
+<section class="sec" id="give"><div class="wrap" style="position:relative">
+  <div class="sec-head"><div><img class="stk side-stk" src="../img/photos/sticker1.png" alt="" style="position:absolute" aria-hidden="true"><span class="lbl">Что даю</span><h2 class="h2" data-split>Что ты получишь</h2></div></div>
+  <div class="give" data-stagger><div class="tile " data-spot><span class="n outline">01</span><h3>Сильные стороны</h3><p>Найду твои сильные и слабые стороны, на которых ты можешь вырасти в деньгах ×2–3</p></div><div class="tile " data-spot><span class="n outline">02</span><h3>Ценности людей</h3><p>Научу считывать ценности людей в работе и в отношениях. Люди = возможности</p></div><div class="tile " data-spot><span class="n outline">03</span><h3>Профайлинг</h3><p>Обучу на практике разбирать человека по мимике, жестам, интонации и понимать людей по микропроявлениям — в том числе разбирая тебя</p></div><div class="tile " data-spot><span class="n outline">04</span><h3>Работа со мной</h3><p>Знакомство и десятки часов работы со мной: больше 100 часов взаимодействия за поток</p></div></div>
+</div></section>
+<section class="sec" id="format" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><span class="lbl">Формат обучения</span><h2 class="h2" data-split>Как проходит работа</h2></div></div>
+  <div class="format" data-stagger><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg><b>3 месяца онлайн</b><p>Системная работа над собой, а не разовый подъём</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><b>Группа 30 человек</b><p>Достаточно мало, чтобы разобрать каждого</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>100+ часов со мной</b><p>Созвоны, разборы, ответы на вопросы</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><b>Разборы в Zoom</b><p>Созвоны до 4 часов — каждый получает задание</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/></svg><b>Вип-чат «Разбор»</b><p>Поддержка участников и моя обратная связь</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>Практика профайлинга</b><p>Разбираем людей по мимике, жестам и интонации</p></div></div>
+</div></section>
+<section class="sec" id="who" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><span class="lbl">Кому подойдёт</span><h2 class="h2" data-split>Тебе стоит идти, если</h2></div></div>
+  <div class="chips" data-stagger><span class="chip on">Эксперт любой ниши</span><span class="chip">Продюсер</span><span class="chip">Хочешь вырасти в деньгах</span><span class="chip">Хочешь разобраться в себе</span></div>
+<ul class="pains" data-stagger>
+  <li><span>01</span>Ты понимаешь многое, но не двигаешься</li>
+  <li><span>02</span>Хочешь привести в порядок мысли, чувства и эмоции, чтобы начать действовать</li>
+  <li><span>03</span>Застреваешь между «надо» и «хочу»</li>
+  <li><span>04</span>Хочешь внутренней ясности, а не временного подъёма</li>
+</ul>
+</div></section>
+<div class="marquee" aria-hidden="true"><div><span>Ясность</span><span>Осознанность</span><span>Люди = возможности</span><span>Ясность</span><span>Осознанность</span><span>Люди = возможности</span><span>Ясность</span><span>Осознанность</span><span>Люди = возможности</span><span>Ясность</span><span>Осознанность</span><span>Люди = возможности</span></div></div>
+<section class="sec" id="program" style="padding-bottom:0">
+  <div class="wrap"><div class="sec-head"><div><span class="lbl">Программа</span><h2 class="h2" data-split>12 основ</h2></div><span class="lbl">Листай вниз →</span></div></div>
+  <div data-hscroll><div class="sticky"><div class="track"><div class="tile h-card" data-spot><span class="n">01</span><div><h3>Потребности</h3><p>Всё, что человек делает, идёт от потребностей.</p><q>Зачем мы их закрываем?</q></div></div><div class="tile h-card" data-spot><span class="n">02</span><div><h3>Цель — счастье</h3><p>Итог один — целостность и покой.</p><q>Откуда тогда тревоги?</q></div></div><div class="tile h-card" data-spot><span class="n">03</span><div><h3>Неопределённость</h3><p>Человек рождается в неопределённости.</p><q>Можем ли мы стать стабильными?</q></div></div><div class="tile h-card" data-spot><span class="n">04</span><div><h3>Нестабильность</h3><p>Настроение, эмоции, энергия колеблются.</p><q>Значит, мы уязвимы?</q></div></div><div class="tile h-card" data-spot><span class="n">05</span><div><h3>Уязвимость</h3><p>Мы защищаем её масками.</p><q>Как ориентироваться в хаосе?</q></div></div><div class="tile h-card" data-spot><span class="n">06</span><div><h3>Эмоция — компас</h3><p>Встроенные указатели внимания.</p><q>Из чего я состою?</q></div></div><div class="tile h-card" data-spot><span class="n">07</span><div><h3>Мы из частей</h3><p>Тело, мысли, эмоции, внимание.</p><q>Как управлять собой?</q></div></div><div class="tile h-card" data-spot><span class="n">08</span><div><h3>Устройство</h3><p>Контроль — только через знание.</p><q>Есть ли общий порядок?</q></div></div><div class="tile h-card" data-spot><span class="n">09</span><div><h3>Порядок</h3><p>Мир устроен закономерно.</p><q>Как принимать решения?</q></div></div><div class="tile h-card" data-spot><span class="n">10</span><div><h3>Решения</h3><p>«Ничего не делаю» — тоже решение.</p><q>Что внутри человека?</q></div></div><div class="tile h-card" data-spot><span class="n">11</span><div><h3>Профайлинг</h3><p>Внешнее отражает внутреннее.</p><q>Как различать понятия?</q></div></div><div class="tile h-card mint"><span class="n">12</span><div><h3>Ясность</h3><p>Разделение понятий и понимание их сути. Лестница завершена.</p></div></div></div></div></div>
+</section>
+<section class="sec" id="cases"><div class="wrap">
+  <div class="sec-head"><div><span class="lbl">Кейсы учеников</span><h2 class="h2" data-split>Было → стало</h2></div><span class="lbl">Нажми на карточку — откроется скриншот</span></div>
+  <div class="cases" data-stagger><article class="tile case wide" data-spot data-zoom="../img/reviews/r02.jpg"><header><div><b>Sergey Romanovich</b><span>@s_romanovich</span></div><img class="thumb" src="../img/reviews/r02.jpg" alt="" loading="lazy"></header><div class="big">+53 млн ₽</div><span class="sub">за 2 запуска</span><p>Продали двум людям годовое партнёрство по 25 млн и сделали +3 млн за 1 день</p></article><article class="tile case" data-spot data-zoom="../img/reviews/r01.jpg"><header><div><b>Devlet Turkmen</b><span>@devlet_turkmen</span></div><img class="thumb" src="../img/reviews/r01.jpg" alt="" loading="lazy"></header><div class="big">5 → 40 тыс.$</div><span class="sub">за 3,5 года</span><p>Купил квартиру за 700 тыс.$, +30 тыс.$ за 1 день на наставничестве</p></article><article class="tile case" data-spot data-zoom="../img/reviews/r04.jpg"><header><div><b>Элина</b><span>@el.yusupovna</span></div><img class="thumb" src="../img/reviews/r04.jpg" alt="" loading="lazy"></header><div class="big">+2,5 млн ₽</div><span class="sub">продаж в первый месяц</span><p>Не признавала свои сильные стороны, сомневалась в работе и отношениях</p></article><article class="tile case" data-spot data-zoom="../img/reviews/r03.jpg"><header><div><b>Bilol</b><span>@bilol.pro</span></div><img class="thumb" src="../img/reviews/r03.jpg" alt="" loading="lazy"></header><div class="big">0 → 1 млн ₽</div><span class="sub">за проект за 3 года</span><p>Проходил мастер-группу 2 раза по 3 месяца</p></article><article class="tile case" data-spot data-zoom="../img/reviews/r16.jpg"><header><div><b>Адам</b><span>поток в сентябре</span></div><img class="thumb" src="../img/reviews/r16.jpg" alt="" loading="lazy"></header><div class="big">Своё дело</div><span class="sub">и ясность в голове</span><p>Пришёл разобраться в себе. Научился разбирать людей, наладил бизнес, понял, что нужно клиентам. «Прежним точно не вернусь»</p></article><article class="tile case wide" data-spot data-zoom="../img/reviews/r06.jpg"><header><div><b>Ильмир и Рафаил</b><span>@s_ilmirr · @rafail_sh</span></div><img class="thumb" src="../img/reviews/r06.jpg" alt="" loading="lazy"></header><div class="big">1,6 млн ₽</div><span class="sub">за один запуск</span><p>Рафаил нашёл своё дело и сделал первые 1 250 000 ₽</p></article></div>
+</div></section><section class="sec" id="reviews" style="padding-top:0"><div class="wrap deck-wrap">
+  <div>
+    <span class="lbl">Отзывы</span>
+    <h2 class="h2" data-split>Колода благодарностей</h2>
+    <p class="lead">23 настоящих скриншотов от учеников. Листай колоду или нажми на карточку, чтобы рассмотреть.</p>
+    <div class="deck-ctrl"><button class="btn" type="button" data-deck-next>Следующий отзыв →</button><span data-deck-count>1 / 23</span></div>
+  </div>
+  <div class="deck" data-deck><button class="shot" type="button" data-zoom="../img/reviews/r07.jpg" style="rotate:-5deg;z-index:23"><img src="../img/reviews/r07.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r08.jpg" style="rotate:2deg;z-index:22"><img src="../img/reviews/r08.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r09.jpg" style="rotate:-2deg;z-index:21"><img src="../img/reviews/r09.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r10.jpg" style="rotate:5deg;z-index:20"><img src="../img/reviews/r10.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r11.jpg" style="rotate:1deg;z-index:19"><img src="../img/reviews/r11.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r12.jpg" style="rotate:-3deg;z-index:18"><img src="../img/reviews/r12.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r13.jpg" style="rotate:4deg;z-index:17"><img src="../img/reviews/r13.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r14.jpg" style="rotate:0deg;z-index:16"><img src="../img/reviews/r14.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r15.jpg" style="rotate:-4deg;z-index:15"><img src="../img/reviews/r15.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r16.jpg" style="rotate:3deg;z-index:14"><img src="../img/reviews/r16.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r17.jpg" style="rotate:-1deg;z-index:13"><img src="../img/reviews/r17.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r18.jpg" style="rotate:-5deg;z-index:12"><img src="../img/reviews/r18.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r19.jpg" style="rotate:2deg;z-index:11"><img src="../img/reviews/r19.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r20.jpg" style="rotate:-2deg;z-index:10"><img src="../img/reviews/r20.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r21.jpg" style="rotate:5deg;z-index:9"><img src="../img/reviews/r21.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r22.jpg" style="rotate:1deg;z-index:8"><img src="../img/reviews/r22.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r23.jpg" style="rotate:-3deg;z-index:7"><img src="../img/reviews/r23.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r01.jpg" style="rotate:4deg;z-index:6"><img src="../img/reviews/r01.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r02.jpg" style="rotate:0deg;z-index:5"><img src="../img/reviews/r02.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r03.jpg" style="rotate:-4deg;z-index:4"><img src="../img/reviews/r03.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r04.jpg" style="rotate:3deg;z-index:3"><img src="../img/reviews/r04.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r05.jpg" style="rotate:-1deg;z-index:2"><img src="../img/reviews/r05.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="../img/reviews/r06.jpg" style="rotate:-5deg;z-index:1"><img src="../img/reviews/r06.jpg" alt="Отзыв ученика" loading="lazy"></button></div>
+</div></section><section class="sec" id="book"><div class="wrap">
+  <div class="sec-head"><div><span class="lbl">Следующий поток</span><h2 class="h2" data-split>Забронируй место</h2></div></div>
+  <div class="book">
+    <div class="tile" data-reveal data-spot>
+      <span class="lbl">Старт потока</span>
+      <div class="date">Ноябрь 2026</div>
+      <span class="lbl">30 мест в группе</span>
+      <div class="seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="lead" style="margin:0">Беру 30 человек в мастер-группу онлайн. Напиши мне в Telegram — текст сообщения уже готов, останется нажать «Отправить».</p>
+    </div>
+    <div class="tile mint" data-reveal data-delay="0.1">
+      <span class="lbl">Стоимость</span>
+      <div class="price"><span data-count="100000">100 000</span>&nbsp;₽</div>
+      <ul class="incl"><li>3 месяца работы в группе</li><li>Больше 100 часов взаимодействия со мной</li><li>Разборы в Zoom и задания</li><li>Вип-чат «Разбор»</li></ul>
+      <div class="btns"><a class="btn shine" href="https://t.me/Aslaxanov?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20%C2%AB%D0%AF%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%C2%BB." target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a><a class="btn btn-ghost" href="https://t.me/aslaxanovv" target="_blank" rel="noopener">Мой ТГ-канал ↗</a></div>
+    </div>
+  </div>
+</div></section>
+<footer>
+  <div class="big" data-split>Тебе нужна <span class="m">ясность</span></div>
+  <div class="row"><span>© 2026 Шамиль Аслаханов</span><span><a href="https://t.me/Aslaxanov?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20%C2%AB%D0%AF%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%C2%BB." target="_blank" rel="noopener">Написать Шамилю</a> · <a href="https://t.me/aslaxanovv" target="_blank" rel="noopener">Telegram-канал</a></span></div>
+</footer>
+<a class="btn sticky-book" href="https://t.me/Aslaxanov?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A8%D0%B0%D0%BC%D0%B8%D0%BB%D1%8C%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%E2%80%94%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20%C2%AB%D0%AF%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%C2%BB." target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a>
+<dialog class="lightbox" aria-label="Скриншот отзыва"><img src="" alt="Скриншот отзыва"><button type="button" aria-label="Закрыть">✕</button></dialog>
+<script src="../vendor/motion.js"></script>
+<script src="../designs/fx.js"></script>
+<script src="main.js"></script>
+<script>
+(() => {
+  const deck = document.querySelector("[data-deck]"), count = document.querySelector("[data-deck-count]");
+  const cards = [...deck.children]; let order = cards.slice(), n = 0;
+  document.querySelector("[data-deck-next]").addEventListener("click", async () => {
+    const top = order.shift(); order.push(top);
+    n = (n + 1) % cards.length; count.textContent = `${n + 1} / ${cards.length}`;
+    if (window.Motion && document.documentElement.classList.contains("fx")) {
+      await Motion.animate(top, { x: [0, 340], rotate: [0, 18], opacity: [1, 0] }, { duration: 0.35, ease: "easeIn" }).finished;
+    }
+    order.forEach((c, k) => { c.style.zIndex = cards.length - k; });
+    top.style.transform = ""; top.style.opacity = "";
+    if (window.Motion && document.documentElement.classList.contains("fx")) Motion.animate(top, { opacity: [0, 1] }, { duration: 0.3 });
+  });
+})();
+</script>
+</body>
+</html>

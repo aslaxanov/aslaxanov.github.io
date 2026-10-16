@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Главный сайт — 5 вариантов</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b0d0c; color: #eef2ef; font: 400 16px/1.55 "Onest", system-ui, sans-serif; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 40px 16px 80px; }
+h1 { font: 800 clamp(1.6rem, 4vw, 2.6rem)/1.1 "Unbounded", sans-serif; text-transform: uppercase; margin: 0 0 10px; }
+.sub { color: #8d978f; margin: 0 0 36px; max-width: 760px; }
+.grid { display: grid; gap: 28px; }
+.card { background: #141816; border: 1px solid #232a26; border-radius: 22px; overflow: hidden; display: grid; }
+.frames { position: relative; display: flex; gap: 16px; align-items: flex-end; padding: 20px; background: radial-gradient(120% 120% at 0% 0%, #1f3a2e, #101311 60%); overflow: hidden; }
+.desk { position: relative; flex: 1; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; border: 1px solid #2c3530; background: #0b0d0c; }
+.desk iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; pointer-events: none; }
+.phone { position: relative; flex: none; width: 120px; height: 260px; border-radius: 22px; border: 5px solid #262e2a; overflow: hidden; background: #0b0d0c; }
+.phone iframe { position: absolute; top: 0; left: 0; width: 390px; height: 845px; border: 0; transform: scale(calc(110 / 390)); transform-origin: 0 0; pointer-events: none; }
+.body { padding: 22px 24px 26px; display: grid; gap: 10px; align-content: start; }
+.body h2 { margin: 0; font: 600 1.25rem "Unbounded", sans-serif; }
+.body p { margin: 0; color: #8d978f; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { font-size: .78rem; border: 1px solid #34403a; border-radius: 999px; padding: 4px 10px; }
+.open { justify-self: start; margin-top: 6px; background: #9fe3c1; color: #08130d; text-decoration: none; padding: 12px 20px; border-radius: 12px; font: 600 .85rem "Unbounded", sans-serif; }
+@media (min-width: 960px) { .card { grid-template-columns: 1.5fr 1fr; } .phone { width: 150px; height: 325px; } .phone iframe { transform: scale(calc(140 / 390)); } }
+@media (max-width: 600px) { .phone { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Главный сайт — 5 вариантов</h1>
+  <p class="sub">Везде одинаковое содержание: оффер, что даю, формат, кому подойдёт, 12 основ, кейсы, отзывы и запись на поток (30 мест). Кнопка «Забронировать место» открывает чат с @Aslaxanov с готовым текстом. Открой каждый вариант и пролистай до конца — главные эффекты при скролле.</p>
+  <div class="grid">
+    <article class="card"><div class="frames"><div class="desk"><iframe src="v1-bento.html" title="Вариант 1" loading="lazy"></iframe></div><div class="phone"><iframe src="v1-bento.html" title="Вариант 1, телефон" loading="lazy"></iframe></div></div>
+      <div class="body"><h2>1 · Бенто 2.0</h2><p>Развитие выбранного «Глубина»: плитки, стикер Шамиля «вылезает» из мятной плитки, вращающийся штамп «30 мест», отзывы листаются стрелками.</p><div class="tags"><span>плитки</span><span>стикер</span><span>карусель</span></div><a class="open" href="v1-bento.html">Открыть →</a></div></article>
+    <article class="card"><div class="frames"><div class="desk"><iframe src="v2-za-spinoy.html" title="Вариант 2" loading="lazy"></iframe></div><div class="phone"><iframe src="v2-za-spinoy.html" title="Вариант 2, телефон" loading="lazy"></iframe></div></div>
+      <div class="body"><h2>2 · Текст за спиной</h2><p>Огромное слово «ЯСНОСТЬ» за спиной Шамиля на весь экран. Отзывы — как сторис в Instagram: сами листаются, тап слева/справа.</p><div class="tags"><span>вау-первый экран</span><span>сторис</span></div><a class="open" href="v2-za-spinoy.html">Открыть →</a></div></article>
+    <article class="card"><div class="frames"><div class="desk"><iframe src="v3-split.html" title="Вариант 3" loading="lazy"></iframe></div><div class="phone"><iframe src="v3-split.html" title="Вариант 3, телефон" loading="lazy"></iframe></div></div>
+      <div class="body"><h2>3 · Сплит</h2><p>На компьютере слева фото Шамиля, оно меняется по мере прокрутки (закат → горы → маяк → студия). Отзывы — бегущая стена скриншотов.</p><div class="tags"><span>фото-история</span><span>стена отзывов</span></div><a class="open" href="v3-split.html">Открыть →</a></div></article>
+    <article class="card"><div class="frames"><div class="desk"><iframe src="v4-stickers.html" title="Вариант 4" loading="lazy"></iframe></div><div class="phone"><iframe src="v4-stickers.html" title="Вариант 4, телефон" loading="lazy"></iframe></div></div>
+      <div class="body"><h2>4 · Стикеры</h2><p>Живой и дерзкий: стикеры Шамиля с белой обводкой, «наклейки» с подписями, мятное пятно, отзывы — колода карточек.</p><div class="tags"><span>игривый</span><span>стикеры</span><span>колода</span></div><a class="open" href="v4-stickers.html">Открыть →</a></div></article>
+    <article class="card"><div class="frames"><div class="desk"><iframe src="v5-kino.html" title="Вариант 5" loading="lazy"></iframe></div><div class="phone"><iframe src="v5-kino.html" title="Вариант 5, телефон" loading="lazy"></iframe></div></div>
+      <div class="body"><h2>5 · Кино</h2><p>Фото на весь экран, как в фильме: закат в поле на первом экране, между разделами — кадры гор и маяка с крупными фразами, отзывы едут вбок при прокрутке.</p><div class="tags"><span>атмосферный</span><span>фото на весь экран</span></div><a class="open" href="v5-kino.html">Открыть →</a></div></article>
+  </div>
+</div>
+<script>
+const fit = () => document.querySelectorAll(".desk").forEach((d) => { d.querySelector("iframe").style.transform = `scale(${d.clientWidth / 1440})`; });
+fit(); addEventListener("resize", fit);
+</script>
+</body>
+</html>
