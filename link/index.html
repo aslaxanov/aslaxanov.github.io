@@ -20,7 +20,12 @@
 .ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, var(--mint), transparent 30%, var(--mint) 55%, transparent 80%, var(--mint)); animation: spin 6s linear infinite; }
 .ring img { position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 30% center; border: 5px solid var(--bg); }
 .role { color: var(--muted); margin: -10px 0 6px; max-width: 300px; }
+.btns { width: 100%; display: grid; gap: 12px; }
 .cta { width: 100%; }
+.cta-alt { background: var(--tile); color: var(--text); border: 1.5px solid #34403a; box-shadow: none; }
+.cta-alt::after { display: none; }
+.cta-alt .ico { background: var(--mint); color: var(--mint-ink); }
+.cta-alt .ico svg.tg { fill: currentColor; stroke: none; }
 .cta > span:last-child { flex: 1; text-align: center; text-wrap: balance; padding-right: 34px; }
 @media (max-width: 440px) { .cta { padding-right: 14px; font-size: .9rem; } .cta > span:last-child { padding-right: 0; } }
 .glow { position: fixed; z-index: -1; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgb(159 227 193 / .16), transparent 65%); top: 8%; left: 50%; translate: -50% 0; animation: drift 12s ease-in-out infinite; pointer-events: none; }
@@ -32,7 +37,10 @@
   <div class="ring" data-reveal><img src="../img/shamil-3.jpg" alt="Шамиль Аслаханов"></div>
   <h1 class="name" data-split="0.15">Шамиль Аслаханов</h1>
   <p class="role" data-reveal data-delay="0.2">Учу понимать себя и действовать осознанно</p>
-  <a class="cta" href="../" data-magnetic data-reveal data-delay="0.3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Записаться на обучение в мастер-группу</span></a>
+  <div class="btns">
+    <a class="cta" href="../" data-magnetic data-reveal data-delay="0.3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Записаться на обучение в мастер-группу</span></a>
+    <a class="cta cta-alt" href="https://t.me/aslaxanovv" target="_blank" rel="noopener" data-magnetic data-reveal data-delay="0.4"><span class="ico"><svg class="tg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg></span><span>Мой ТГ-канал</span></a>
+  </div>
 </main>
 <script src="../vendor/motion.js"></script>
 <script src="../designs/fx.js"></script>
