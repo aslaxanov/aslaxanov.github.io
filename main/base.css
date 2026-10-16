@@ -17,6 +17,8 @@ a { color: inherit; }
 /* Nav */
 .nav { position: sticky; top: 0; z-index: 40; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
 .nav b { font: 600 .9rem "Unbounded"; }
+/* phones: no top bar while scrolling — the progress line and the bottom button stay */
+@media (max-width: 899px) { .nav { display: none; } }
 .nav .links { display: none; gap: 24px; font-size: .9rem; color: var(--muted); }
 .nav .links a { text-decoration: none; transition: color .2s; }
 .nav .links a:hover { color: var(--text); }
