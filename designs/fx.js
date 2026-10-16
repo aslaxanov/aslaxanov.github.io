@@ -25,6 +25,11 @@
     }
   }
 
+  // Trigger as soon as any part of an element crosses 90% of the screen height.
+  // A percentage threshold ("20% visible") never fires for blocks taller than the
+  // screen, e.g. a column of 6 cards on a phone, and they stay hidden forever.
+  const seen = { amount: "some", margin: "0px 0px -10% 0px" };
+
   document.querySelectorAll("[data-split]").forEach((el) => {
     wrapWords(el);
     el.style.opacity = 1;
@@ -32,7 +37,7 @@
     inView(el, () => {
       animate(words, { y: ["110%", "0%"], opacity: [0, 1], filter: ["blur(8px)", "blur(0px)"] },
         { duration: 0.9, ease, delay: stagger(0.06, { startDelay: Number(el.dataset.split) || 0 }) });
-    }, { amount: 0.4 });
+    }, seen);
   });
 
   document.querySelectorAll("[data-reveal]").forEach((el) => {
@@ -43,13 +48,20 @@
         ? { clipPath: ["inset(100% 0 0 0)", "inset(0% 0 0 0)"], opacity: [1, 1] }
         : { opacity: [0, 1], y: [28, 0] },
         { duration: clip ? 1.2 : 0.8, ease, delay: Number(el.dataset.delay) || 0 });
-    }, { amount: 0.25 });
+    }, seen);
   });
 
-  document.querySelectorAll("[data-stagger]").forEach((el) => {
-    inView(el, () => {
-      animate([...el.children], { opacity: [0, 1], y: [24, 0] }, { duration: 0.7, ease, delay: stagger(0.08) });
-    }, { amount: 0.2 });
+  // Each child appears when it reaches the screen; children arriving together stagger.
+  let batch = [];
+  const flush = () => {
+    animate(batch, { opacity: [0, 1], y: [24, 0] }, { duration: 0.7, ease, delay: stagger(0.08) });
+    batch = [];
+  };
+  document.querySelectorAll("[data-stagger] > *").forEach((child) => {
+    inView(child, () => {
+      if (!batch.length) requestAnimationFrame(flush);
+      batch.push(child);
+    }, seen);
   });
 
   document.querySelectorAll("[data-parallax]").forEach((el) => {
