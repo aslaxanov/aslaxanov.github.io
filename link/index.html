@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Шамиль Аслаханов</title>
+<meta name="description" content="Шамиль Аслаханов. Мастер-группа «Ясность».">
+<meta property="og:title" content="Шамиль Аслаханов">
+<meta property="og:description" content="Записаться на обучение в мастер-группу «Ясность»">
+<meta property="og:image" content="https://tashnurik.github.io/shamil-site/img/shamil-3.jpg">
+<meta name="theme-color" content="#0b0d0c">
+<script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("fx");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../designs/fx.css">
+<link rel="stylesheet" href="link.css">
+<style>
+.page { align-items: center; text-align: center; gap: 22px; }
+.ring { position: relative; width: 196px; height: 196px; border-radius: 50%; padding: 5px; }
+.ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, var(--mint), transparent 30%, var(--mint) 55%, transparent 80%, var(--mint)); animation: spin 6s linear infinite; }
+.ring img { position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 30% center; border: 5px solid var(--bg); }
+.role { color: var(--muted); margin: -10px 0 6px; max-width: 300px; }
+.cta { width: 100%; }
+.cta > span:last-child { flex: 1; text-align: center; text-wrap: balance; padding-right: 34px; }
+@media (max-width: 440px) { .cta { padding-right: 14px; font-size: .9rem; } .cta > span:last-child { padding-right: 0; } }
+.glow { position: fixed; z-index: -1; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgb(159 227 193 / .16), transparent 65%); top: 8%; left: 50%; translate: -50% 0; animation: drift 12s ease-in-out infinite; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main class="page">
+  <div class="ring" data-reveal><img src="../img/shamil-3.jpg" alt="Шамиль Аслаханов"></div>
+  <h1 class="name" data-split="0.15">Шамиль Аслаханов</h1>
+  <p class="role" data-reveal data-delay="0.2">Учу понимать себя и действовать осознанно</p>
+  <a class="cta" href="../designs/v4-glubina.html" data-magnetic data-reveal data-delay="0.3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Записаться на обучение в мастер-группу</span></a>
+</main>
+<script src="../vendor/motion.js"></script>
+<script src="../designs/fx.js"></script>
+</body>
+</html>
