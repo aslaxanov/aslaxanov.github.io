@@ -33,3 +33,29 @@ document.querySelectorAll("[data-carousel]").forEach((track) => {
   root.querySelector("[data-prev]")?.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
   root.querySelector("[data-next]")?.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
 });
+
+// Countdown "scoreboard": <div class="cd" data-countdown="ISO date"> with [data-cd="d0"] … [data-cd="s1"] digits
+const clocks = document.querySelectorAll("[data-countdown]");
+if (clocks.length) {
+  const start = new Date(clocks[0].dataset.countdown).getTime();
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tick = () => {
+    const ms = Math.max(0, start - Date.now());
+    const v = { d: Math.floor(ms / 864e5), h: Math.floor(ms / 36e5) % 24, m: Math.floor(ms / 6e4) % 60, s: Math.floor(ms / 1e3) % 60 };
+    clocks.forEach((c) => {
+      c.classList.toggle("over", ms === 0);
+      for (const k in v) {
+        const t = String(Math.min(v[k], 99)).padStart(2, "0");
+        for (let i = 0; i < 2; i++) {
+          const el = c.querySelector(`[data-cd="${k}${i}"]`);
+          if (el.textContent === t[i]) continue;
+          el.textContent = t[i];
+          if (!reduce) el.animate([{ transform: "translateY(-30%)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 300, easing: "cubic-bezier(.22,1,.36,1)" });
+        }
+      }
+    });
+    if (ms === 0) clearInterval(timer);
+  };
+  const timer = setInterval(tick, 1000);
+  tick();
+}

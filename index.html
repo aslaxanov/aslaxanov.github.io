@@ -103,6 +103,51 @@
   .bk-b .bk-price .incl { margin-bottom: 0; }
   .bk-c { grid-template-columns: 1fr 1.35fr; align-items: stretch; }
 }
+.cd { margin-top: 26px; }
+.cd-lbl { margin: 0 0 12px; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mint); }
+.cd-row { display: flex; align-items: flex-start; gap: 6px; }
+.cd-unit { display: grid; justify-items: center; gap: 6px; }
+.cd-unit small { font-size: .72rem; color: var(--muted); }
+.cd-digits { display: flex; gap: 3px; }
+.cd-digits span { position: relative; display: grid; place-items: center; width: 30px; height: 44px; border-radius: 8px; background: #1b201d; border: 1px solid #2a332e; font: 800 1.35rem "Unbounded"; font-variant-numeric: tabular-nums; overflow: hidden; }
+.cd-digits span::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--bg); }
+.cd-colon { font: 800 1.3rem/44px "Unbounded"; color: var(--mint); }
+.cd-done { display: none; margin: 0; font: 800 1.4rem "Unbounded"; color: var(--mint); text-transform: uppercase; }
+.cd.over .cd-row, .cd.over .cd-lbl { display: none; }
+.cd.over .cd-done { display: block; }
+.cd-bottom { display: flex; justify-content: center; text-align: center; margin-top: 36px; }
+.cd-bottom .cd { margin: 0; }
+.cd-bottom .cd-row { justify-content: center; }
+@media (min-width: 600px) {
+  .cd-row { gap: 8px; }
+  .cd-digits span { width: 42px; height: 60px; font-size: 1.9rem; border-radius: 10px; }
+  .cd-colon { font-size: 1.8rem; line-height: 60px; }
+}
+/* Phones: everything must fit narrow screens (320–400 px) */
+.num small { font-size: .5em; }
+.tile b, .tile h3, .who-card p, .case .big { hyphens: auto; overflow-wrap: break-word; }
+.hero-tile > * { min-width: 0; }
+@media (max-width: 599px) {
+  .stats .tile { padding: 18px; min-height: 120px; }
+  .stats .num { font-size: clamp(1.9rem, 10vw, 2.6rem); }
+  .stats .lbl { font-size: .66rem; letter-spacing: .06em; }
+  .sticky-book, .hero-tile .btn { white-space: nowrap; font-size: clamp(.78rem, 3.9vw, .95rem); padding: 0 16px; }
+  .format { grid-template-columns: 1fr; }
+  .format .tile { min-height: 0; flex-direction: row; align-items: flex-start; gap: 14px; }
+  .format .tile > div { display: grid; gap: 4px; }
+  .who-card { grid-template-columns: 40px 1fr; padding: 18px; }
+  .who-card .n { font-size: 1.3rem; }
+  .who-card p { font-size: .95rem; }
+  .hero-tile { padding: 24px 18px; }
+  .hero-tile .h1 { font-size: clamp(1.9rem, 9.6vw, 2.3rem); }
+  .bk .tile { padding: 22px 18px; }
+  .price { font-size: clamp(1.9rem, 10.5vw, 2.6rem); }
+  .cd-row { gap: 4px; }
+  .cd-digits { gap: 2px; }
+  .cd-digits span { width: clamp(22px, 7vw, 30px); height: clamp(34px, 10.5vw, 44px); font-size: clamp(1rem, 5vw, 1.35rem); border-radius: 7px; }
+  .cd-colon { font-size: 1rem; line-height: clamp(34px, 10.5vw, 44px); }
+  .cd-unit small { font-size: .66rem; }
+}
 /* Final call to action */
 .final-cta { text-align: center; padding: clamp(80px, 12vw, 150px) 16px clamp(56px, 8vw, 96px); position: relative; overflow: hidden; }
 .final-cta::before { content: ""; position: absolute; left: 50%; top: 55%; width: 640px; height: 640px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgb(159 227 193 / .18), transparent 65%); pointer-events: none; }
@@ -110,7 +155,8 @@
 .final-cta .btn { position: relative; min-height: 64px; padding: 0 34px; font-size: 1.05rem; }
 footer.mini { text-align: center; color: var(--muted); font-size: .85rem; padding: 24px 16px 40px; }
 @media (min-width: 600px) and (max-width: 899px) { .cases { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 599px) { .case-img { height: 300px; } .case-body { padding: 18px 18px 20px; } .case .big { font-size: 1.9rem; } }
+@media (max-width: 599px) { .case-img { height: 300px; } .case-body { padding: 18px 18px 20px; } .case .big { font-size: 1.7rem; } }
+.case .big { white-space: normal; text-wrap: balance; }
 @media (min-width: 900px) {
   .cases { grid-template-columns: repeat(3, 1fr); }
   .case-img { height: 420px; }
@@ -152,16 +198,17 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
 <header class="hero" data-hero><div class="wrap">
   <div class="tile hero-tile" data-spot data-reveal>
     <div>
-      <span class="lbl">Мастер-группа «Ясность» · старт в ноябре · 30 мест</span>
+      <span class="lbl">Мастер-группа «Ясность» · старт 1 ноября · 30 мест</span>
       <h1 class="h1" data-split="0.1">Разберись <span class="m">в себе</span> за 3 месяца</h1>
       <p class="lead">Я учу видеть причинно-следственные связи в себе: почему ты действуешь и чувствуешь именно так — и как управлять собой.</p>
       <div class="btns"><a class="btn shine" href="https://t.me/Aslaxanov?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a><a class="btn btn-ghost" href="https://t.me/aslaxanovv" target="_blank" rel="noopener">Мой ТГ-канал ↗</a></div>
+      <div class="cd" data-countdown="2026-11-01T00:00:00+03:00"><p class="cd-lbl">Старт потока 1 ноября</p><div class="cd-row" role="timer" aria-label="До старта потока"><div class="cd-unit"><div class="cd-digits"><span data-cd="d0">0</span><span data-cd="d1">0</span></div><small>дней</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="h0">0</span><span data-cd="h1">0</span></div><small>часов</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="m0">0</span><span data-cd="m1">0</span></div><small>минут</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="s0">0</span><span data-cd="s1">0</span></div><small>секунд</small></div></div><p class="cd-done">Поток стартовал</p></div>
     </div>
     <figure class="frame fr-circle" data-reveal data-delay="0.2" style="margin:0 auto 14px"><div class="pic"><img src="img/shamil-2.jpg" alt="Шамиль Аслаханов"></div><span class="tag">Психолог · профайлер</span></figure>
   </div>
   <div style="margin-top:10px"><div class="stats" data-stagger>
   <div class="tile" data-spot><span class="lbl">Мест в потоке</span><div class="num" data-count="30">30</div></div>
-  <div class="tile" data-spot><span class="lbl">Длительность</span><div class="num"><span data-count="3">3</span>&nbsp;мес.</div></div>
+  <div class="tile" data-spot><span class="lbl">Длительность</span><div class="num"><span data-count="3">3</span><small>&nbsp;мес.</small></div></div>
   <div class="tile" data-spot><span class="lbl">Часов работы со мной</span><div class="num"><span data-count="100">100</span>+</div></div>
   <div class="tile" data-spot><span class="lbl">Основ в программе</span><div class="num" data-count="12">12</div></div>
 </div></div>
@@ -172,7 +219,7 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
 </div></section>
 <section class="sec" id="format" style="padding-top:0"><div class="wrap">
   <div class="sec-head"><div><span class="lbl">Формат обучения</span><h2 class="h2" data-split>Как проходит работа</h2></div></div>
-  <div class="format" data-stagger><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg><b>3 месяца онлайн</b><p>Системная работа над собой, а не разовый подъём</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><b>Группа 30 человек</b><p>Небольшая группа — успеваем разобрать каждого</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>100+ часов со мной</b><p>Созвоны, разборы, ответы на вопросы</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><b>Разборы в Zoom</b><p>Созвоны длятся от 3 до 6 часов — в зависимости от количества запросов участников</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/></svg><b>Вип-чат «Разбор»</b><p>Поддержка участников и моя обратная связь. Доступ к чату остаётся навсегда</p></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><b>Практика профайлинга</b><p>Разбираем людей по мимике, жестам и интонации</p></div></div>
+  <div class="format" data-stagger><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg><div><b>3 месяца онлайн</b><p>Системная работа над собой, а не разовый подъём</p></div></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><div><b>Группа 30 человек</b><p>Небольшая группа — успеваем разобрать каждого</p></div></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>100+ часов со мной</b><p>Созвоны, разборы, ответы на вопросы</p></div></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><div><b>Разборы в Zoom</b><p>Созвоны длятся от 3 до 6 часов — в зависимости от количества запросов участников</p></div></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/></svg><div><b>Вип-чат «Разбор»</b><p>Поддержка участников и моя обратная связь. Доступ к чату остаётся навсегда</p></div></div><div class="tile" data-spot><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><div><b>Практика профайлинга</b><p>Разбираем людей по мимике, жестам и интонации</p></div></div></div>
 </div></section>
 <section class="sec" id="who" style="padding-top:0"><div class="wrap">
   <div class="sec-head"><div><span class="lbl">Кому подойдёт</span><h2 class="h2" data-split>Тебе стоит идти, если</h2></div></div>
@@ -188,7 +235,8 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
   <div class="rev-track" data-carousel><button class="shot" type="button" data-zoom="img/reviews/r07.jpg"><img src="img/reviews/r07.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r08.jpg"><img src="img/reviews/r08.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r09.jpg"><img src="img/reviews/r09.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r10.jpg"><img src="img/reviews/r10.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r11.jpg"><img src="img/reviews/r11.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r12.jpg"><img src="img/reviews/r12.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r13.jpg"><img src="img/reviews/r13.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r14.jpg"><img src="img/reviews/r14.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r15.jpg"><img src="img/reviews/r15.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r16.jpg"><img src="img/reviews/r16.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r17.jpg"><img src="img/reviews/r17.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r18.jpg"><img src="img/reviews/r18.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r19.jpg"><img src="img/reviews/r19.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r20.jpg"><img src="img/reviews/r20.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r21.jpg"><img src="img/reviews/r21.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r22.jpg"><img src="img/reviews/r22.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r23.jpg"><img src="img/reviews/r23.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r01.jpg"><img src="img/reviews/r01.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r02.jpg"><img src="img/reviews/r02.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r03.jpg"><img src="img/reviews/r03.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r04.jpg"><img src="img/reviews/r04.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r05.jpg"><img src="img/reviews/r05.jpg" alt="Отзыв ученика" loading="lazy"></button><button class="shot" type="button" data-zoom="img/reviews/r06.jpg"><img src="img/reviews/r06.jpg" alt="Отзыв ученика" loading="lazy"></button></div>
 </section><section class="sec" id="book" data-final><div class="wrap">
   <div class="sec-head"><div><span class="lbl">Следующий поток</span><h2 class="h2" data-split>Забронируй место</h2></div></div>
-  <div class="bk bk-b"><div class="tile bk-date" data-reveal data-spot><div><span class="lbl">Старт потока</span><div class="date">Ноябрь 2026</div><span class="lbl">30 мест в группе</span></div><div class="seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="tile mint bk-price" data-reveal data-delay="0.1"><div><span class="lbl">Стоимость</span><div class="price"><span data-count="100000">100 000</span>&nbsp;₽</div><ul class="incl"><li>3 месяца работы в группе</li><li>26 созвонов</li><li>Больше 100 часов работы со мной</li><li>Разборы в Zoom и задания</li><li>Вип-чат «Разбор» — доступ навсегда</li><li><b>Бонус:</b> личная консультация после 12 групповых созвонов</li></ul></div><div class="terms"><div><b>Рассрочка: 2 платежа по 50%</b><span>Вторая оплата — через месяц после начала обучения</span></div><div><b>Гарантия возврата</b><span>Если в первые 7 дней поймёшь, что это не твоё, — вернём деньги в полном объёме</span></div></div></div></div>
+  <div class="bk bk-b"><div class="tile bk-date" data-reveal data-spot><div><span class="lbl">Старт потока</span><div class="date">1 ноября 2026</div><span class="lbl">30 мест в группе</span></div><div class="seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="tile mint bk-price" data-reveal data-delay="0.1"><div><span class="lbl">Стоимость</span><div class="price"><span data-count="100000">100 000</span>&nbsp;₽</div><ul class="incl"><li>3 месяца работы в группе</li><li>26 созвонов</li><li>Больше 100 часов работы со мной</li><li>Разборы в Zoom и задания</li><li>Вип-чат «Разбор» — доступ навсегда</li><li><b>Бонус:</b> личная консультация после 12 групповых созвонов</li></ul></div><div class="terms"><div><b>Рассрочка: 2 платежа по 50%</b><span>Вторая оплата — через месяц после начала обучения</span></div><div><b>Гарантия возврата</b><span>Если в первые 7 дней поймёшь, что это не твоё, — вернём деньги в полном объёме</span></div></div></div></div>
+  <div class="cd-bottom"><div class="cd" data-countdown="2026-11-01T00:00:00+03:00"><p class="cd-lbl">Старт потока 1 ноября</p><div class="cd-row" role="timer" aria-label="До старта потока"><div class="cd-unit"><div class="cd-digits"><span data-cd="d0">0</span><span data-cd="d1">0</span></div><small>дней</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="h0">0</span><span data-cd="h1">0</span></div><small>часов</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="m0">0</span><span data-cd="m1">0</span></div><small>минут</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="s0">0</span><span data-cd="s1">0</span></div><small>секунд</small></div></div><p class="cd-done">Поток стартовал</p></div></div>
   <div class="bk-cta"><a class="btn shine btn-xl" href="https://t.me/Aslaxanov?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a></div>
 </div></section>
 <footer class="mini">© 2026 Шамиль Аслаханов</footer>
