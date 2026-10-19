@@ -8,19 +8,19 @@
 <meta property="og:title" content="Шамиль Аслаханов — мастер-группа «Ясность»">
 <meta property="og:description" content="3 месяца, 30 мест. Разберись в себе, научись понимать людей и вырасти в деньгах.">
 <meta property="og:image" content="https://aslaxanov.github.io/img/shamil-3.jpg">
-<meta name="theme-color" content="#0b0d0c">
+<meta name="theme-color" content="#110f0c">
 <script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches && !location.search.includes("static")) document.documentElement.classList.add("fx");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="designs/fx.css">
-<link rel="stylesheet" href="main/base.css">
+<link rel="stylesheet" href="main/base.css?v=sand">
 <style>
 .hero { padding: 12px 0 0; }
 .bento { display: grid; gap: 10px; }
-.b-main { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 460px; background: radial-gradient(120% 120% at 0% 0%, #1f3a2e 0%, var(--tile) 55%); }
+.b-main { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 460px; background: radial-gradient(120% 120% at 0% 0%, #3a2c1c 0%, var(--tile) 55%); }
 .b-main .lead { margin: 0 0 20px; }
 .b-sticker { padding: 0; min-height: 460px; }
-.b-sticker::before { content: ""; position: absolute; inset: 45% 0 0; z-index: 1; background: linear-gradient(transparent, rgb(11 13 12 / .85)); }
+.b-sticker::before { content: ""; position: absolute; inset: 45% 0 0; z-index: 1; background: linear-gradient(transparent, rgb(17 15 12 / .85)); }
 .b-sticker > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; }
 .b-sticker .lbl { position: absolute; z-index: 2; left: 20px; bottom: 18px; color: var(--mint); }
 .b-sticker .stamp { position: absolute; z-index: 2; right: 14px; top: 14px; width: 104px; height: 104px; border-radius: 50%; background: var(--mint); animation: spin 18s linear infinite; }
@@ -33,7 +33,7 @@
 .rev-track .shot { width: min(62vw, 260px); aspect-ratio: 461 / 818; scroll-snap-align: start; transition: transform .3s cubic-bezier(.22,1,.36,1), border-color .3s; }
 .rev-track .shot:hover { transform: translateY(-6px); border-color: var(--mint); }
 .arrows { display: flex; gap: 8px; }
-.arrows button { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #34403a; background: transparent; color: var(--text); font-size: 1.1rem; cursor: pointer; }
+.arrows button { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #463d33; background: transparent; color: var(--text); font-size: 1.1rem; cursor: pointer; }
 .arrows button:hover { border-color: var(--mint); color: var(--mint); }
 @media (min-width: 900px) {
   .bento { grid-template-columns: repeat(4, 1fr); }
@@ -49,7 +49,7 @@
 .case-img { position: relative; height: 360px; overflow: hidden; border-bottom: 1px solid var(--line); background: #000; }
 .case-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s cubic-bezier(.22,1,.36,1); }
 .case:hover .case-img img { transform: scale(1.04); }
-.zoom-hint { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgb(11 13 12 / .78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--mint); font: 600 .78rem "Onest"; border: 1px solid rgb(159 227 193 / .35); }
+.zoom-hint { position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgb(17 15 12 / .78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--mint); font: 600 .78rem "Onest"; border: 1px solid rgb(230 203 160 / .35); }
 .zoom-hint svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .case-body { padding: 20px 22px 24px; display: grid; gap: 8px; }
 .case-body b { font: 600 1rem "Unbounded"; }
@@ -59,16 +59,16 @@
 .book-one { display: grid; gap: 28px; padding: 32px; }
 .book-one .date { color: var(--mint-ink); }
 .book-one .seats i { border-color: var(--mint-ink); }
-.book-one .bk-r { border-top: 1px solid rgb(8 19 13 / .2); padding-top: 24px; }
+.book-one .bk-r { border-top: 1px solid rgb(28 20 10 / .2); padding-top: 24px; }
 .bk-cta { grid-column: 1 / -1; display: flex; justify-content: center; padding-top: 8px; }
 .btn-xl { min-height: 76px; padding: 0 48px; font-size: 1.15rem; border-radius: 18px; width: min(100%, 520px); }
 .btn-xl svg { width: 24px; height: 24px; }
 @media (max-width: 599px) { .btn-xl { font-size: .98rem; padding: 0 20px; min-height: 68px; } }
 .chip { border-radius: 18px; line-height: 1.35; }
 .terms { grid-column: 1 / -1; display: grid; gap: 10px; }
-.terms div { background: rgb(8 19 13 / .08); border: 1px solid rgb(8 19 13 / .15); border-radius: 16px; padding: 16px 18px; display: grid; gap: 4px; }
+.terms div { background: rgb(28 20 10 / .08); border: 1px solid rgb(28 20 10 / .15); border-radius: 16px; padding: 16px 18px; display: grid; gap: 4px; }
 .terms b { font: 600 .95rem "Unbounded"; }
-.terms span { font-size: .92rem; color: #24432f; }
+.terms span { font-size: .92rem; color: #4a3820; }
 .incl b { font-weight: 700; }
 .ladder12 { list-style: none; padding: 0; margin: 0; display: grid; border-top: 1px solid var(--line); }
 .ladder12 li { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -90,8 +90,8 @@
 .bk-price .date, .bk-price .seats i { color: var(--mint-ink); }
 .bk .terms { display: grid; gap: 8px; margin-top: 4px; grid-template-columns: 1fr !important; grid-column: auto; }
 .bk-cta { display: flex; justify-content: center; margin-top: 28px; }
-.ticket { border-style: dashed; border-color: #3a4a42; }
-.ticket .stub { display: block; margin-top: 22px; padding-top: 16px; border-top: 2px dashed #3a4a42; font: 600 .8rem "Unbounded"; color: var(--mint); letter-spacing: .06em; text-transform: uppercase; }
+.ticket { border-style: dashed; border-color: #463d33; }
+.ticket .stub { display: block; margin-top: 22px; padding-top: 16px; border-top: 2px dashed #463d33; font: 600 .8rem "Unbounded"; color: var(--mint); letter-spacing: .06em; text-transform: uppercase; }
 .ticket::before, .ticket::after { content: ""; position: absolute; width: 28px; height: 28px; border-radius: 50%; background: var(--bg); top: 50%; translate: 0 -50%; }
 .ticket::before { left: -15px; } .ticket::after { right: -15px; }
 .bk-b .bk-date { display: grid; gap: 18px; align-items: center; }
@@ -111,7 +111,7 @@
 .cd-unit { display: grid; justify-items: center; gap: 6px; }
 .cd-unit small { font-size: .72rem; color: var(--muted); }
 .cd-digits { display: flex; gap: 3px; }
-.cd-digits span { position: relative; display: grid; place-items: center; width: 30px; height: 44px; border-radius: 8px; background: #1b201d; border: 1px solid #2a332e; font: 800 1.35rem "Unbounded"; font-variant-numeric: tabular-nums; overflow: hidden; }
+.cd-digits span { position: relative; display: grid; place-items: center; width: 30px; height: 44px; border-radius: 8px; background: #241f19; border: 1px solid #362f27; font: 800 1.35rem "Unbounded"; font-variant-numeric: tabular-nums; overflow: hidden; }
 .cd-digits span::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--bg); }
 .cd-colon { font: 800 1.3rem/44px "Unbounded"; color: var(--mint); }
 .cd-done { display: none; margin: 0; font: 800 1.4rem "Unbounded"; color: var(--mint); text-transform: uppercase; }
@@ -151,11 +151,11 @@
   .cd-unit small { font-size: .66rem; }
 }
 .case { cursor: default; }
-.case-img.prof { height: auto; background: #0b0d0c; }
+.case-img.prof { height: auto; background: #110f0c; }
 .case-img.prof img { height: auto; object-fit: contain; }
 /* Final call to action */
 .final-cta { text-align: center; padding: clamp(80px, 12vw, 150px) 16px clamp(56px, 8vw, 96px); position: relative; overflow: hidden; }
-.final-cta::before { content: ""; position: absolute; left: 50%; top: 55%; width: 640px; height: 640px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgb(159 227 193 / .18), transparent 65%); pointer-events: none; }
+.final-cta::before { content: ""; position: absolute; left: 50%; top: 55%; width: 640px; height: 640px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgb(230 203 160 / .18), transparent 65%); pointer-events: none; }
 .final-cta .big { position: relative; font: 800 clamp(2.4rem, 9vw, 7rem)/.92 "Unbounded"; text-transform: uppercase; letter-spacing: -.04em; margin: 0 auto 40px; max-width: 1100px; }
 .final-cta .btn { position: relative; min-height: 64px; padding: 0 34px; font-size: 1.05rem; }
 footer.mini { text-align: center; color: var(--muted); font-size: .85rem; padding: 24px 16px 40px; }
@@ -166,10 +166,10 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
   .cases { grid-template-columns: repeat(3, 1fr); }
   .case-img { height: 420px; }
   .book-one { grid-template-columns: 1fr 1fr; gap: 48px; padding: 44px; }
-  .book-one .bk-r { border-top: 0; padding-top: 0; border-left: 1px solid rgb(8 19 13 / .2); padding-left: 48px; }
+  .book-one .bk-r { border-top: 0; padding-top: 0; border-left: 1px solid rgb(28 20 10 / .2); padding-left: 48px; }
 }
 /* Hero v2: text + framed photo in one tile */
-.hero-tile { display: grid; gap: 32px; align-items: center; background: radial-gradient(120% 120% at 0% 0%, #1f3a2e 0%, var(--tile) 55%); padding: 28px 22px; }
+.hero-tile { display: grid; gap: 32px; align-items: center; background: radial-gradient(120% 120% at 0% 0%, #3a2c1c 0%, var(--tile) 55%); padding: 28px 22px; }
 .hero-tile .h1 { margin: 16px 0 18px; font-size: clamp(1.6rem, 3.6vw, 3.3rem); line-height: 1.02; }
 .hero-tile .lead { margin: 0 0 24px; }
 .frame { position: relative; width: min(100%, 300px); margin: 0 auto; }
@@ -177,9 +177,9 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
 .frame .tag { position: absolute; z-index: 2; left: 50%; bottom: -14px; translate: -50% 0; white-space: nowrap; background: var(--mint); color: var(--mint-ink); font: 600 .72rem "Unbounded"; letter-spacing: .06em; text-transform: uppercase; padding: 9px 14px; border-radius: 999px; }
 /* arch */
 .fr-arch { aspect-ratio: 4 / 5; }
-.fr-arch .pic { width: 100%; height: 100%; border-radius: 999px 999px 24px 24px; overflow: hidden; border: 1px solid #2c3530; box-shadow: 0 30px 80px -20px rgb(159 227 193 / .35); }
+.fr-arch .pic { width: 100%; height: 100%; border-radius: 999px 999px 24px 24px; overflow: hidden; border: 1px solid #362f27; box-shadow: 0 30px 80px -20px rgb(230 203 160 / .35); }
 /* circle */
-.fr-circle { aspect-ratio: 1; padding: 10px; border-radius: 50%; background: conic-gradient(from 210deg, var(--mint), #2c5a46, var(--mint)); }
+.fr-circle { aspect-ratio: 1; padding: 10px; border-radius: 50%; background: conic-gradient(from 210deg, var(--mint), #8a6b45, var(--mint)); }
 .fr-circle .pic { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 6px solid var(--tile); }
 /* blob */
 .fr-blob { aspect-ratio: 1; }
@@ -187,10 +187,10 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
 .fr-blob .pic { width: 100%; height: 100%; overflow: hidden; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; animation: blobmorph 10s ease-in-out infinite; }
 @keyframes blobmorph { 50% { border-radius: 38% 62% 40% 60% / 60% 38% 62% 40%; } }
 /* polaroid */
-.fr-polaroid { rotate: 3deg; background: #f3f5f2; padding: 12px 12px 52px; border-radius: 6px; box-shadow: 0 30px 60px -20px rgb(0 0 0 / .7); transition: rotate .4s cubic-bezier(.34,1.56,.64,1); }
+.fr-polaroid { rotate: 3deg; background: #f4eee5; padding: 12px 12px 52px; border-radius: 6px; box-shadow: 0 30px 60px -20px rgb(0 0 0 / .7); transition: rotate .4s cubic-bezier(.34,1.56,.64,1); }
 .fr-polaroid:hover { rotate: 0deg; }
 .fr-polaroid .pic { aspect-ratio: 1; overflow: hidden; border-radius: 2px; }
-.fr-polaroid .tag { bottom: 14px; background: none; color: #1a1f1c; font: 600 .95rem "Onest"; letter-spacing: 0; text-transform: none; }
+.fr-polaroid .tag { bottom: 14px; background: none; color: #241f19; font: 600 .95rem "Onest"; letter-spacing: 0; text-transform: none; }
 @media (min-width: 900px) {
   .hero-tile { grid-template-columns: 1.5fr 1fr; gap: 48px; padding: 48px; min-height: 560px; }
   .frame { width: min(100%, 340px); }
@@ -209,7 +209,7 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
       <div class="btns"><a class="btn shine" href="https://t.me/Aslaxanov?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a><a class="btn btn-ghost" href="https://t.me/aslaxanovv" target="_blank" rel="noopener">Мой ТГ-канал ↗</a></div>
       <div class="cd" data-countdown="2026-11-01T00:00:00+03:00"><p class="cd-lbl">Старт потока 1 ноября</p><div class="cd-row" role="timer" aria-label="До старта потока"><div class="cd-unit"><div class="cd-digits"><span data-cd="d0">0</span><span data-cd="d1">0</span></div><small>дней</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="h0">0</span><span data-cd="h1">0</span></div><small>часов</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="m0">0</span><span data-cd="m1">0</span></div><small>минут</small></div><span class="cd-colon">:</span><div class="cd-unit"><div class="cd-digits"><span data-cd="s0">0</span><span data-cd="s1">0</span></div><small>секунд</small></div></div><p class="cd-done">Поток стартовал</p></div>
     </div>
-    <figure class="frame fr-circle" data-reveal data-delay="0.2" style="margin:0 auto 14px"><div class="pic"><img src="img/shamil-2.jpg" alt="Шамиль Аслаханов"></div><span class="tag">Психолог · профайлер</span></figure>
+    <figure class="frame fr-circle" data-reveal data-delay="0.2" style="margin:0 auto 14px"><div class="pic"><img src="img/shamil-4.jpg" alt="Шамиль Аслаханов" style="object-position:50% 25%"></div><span class="tag">Психолог · профайлер</span></figure>
   </div>
   <div style="margin-top:10px"><div class="stats" data-stagger>
   <div class="tile" data-spot><span class="lbl">Мест в потоке</span><div class="num" data-count="30">30</div></div>

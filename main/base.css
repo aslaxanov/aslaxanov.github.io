@@ -1,4 +1,4 @@
-:root { --bg: #0b0d0c; --tile: #141816; --tile2: #1b201d; --text: #eef2ef; --muted: #8d978f; --line: #232a26; --mint: #9fe3c1; --mint-ink: #08130d; --r: 24px; }
+:root { --bg: #110f0c; --tile: #1b1814; --tile2: #241f19; --text: #f4eee5; --muted: #a39888; --line: #2c2620; --mint: #e6cba0; --mint-ink: #1c140a; --r: 24px; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 "Onest", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
@@ -28,7 +28,7 @@ a { color: inherit; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 24px; border-radius: 14px; background: var(--mint); color: var(--mint-ink); font: 600 .95rem "Unbounded", sans-serif; text-decoration: none; border: 1.5px solid var(--mint); position: relative; overflow: hidden; isolation: isolate; transition: transform .2s cubic-bezier(.22,1,.36,1); }
 .btn:active { transform: scale(.97); }
 .btn svg { width: 20px; height: 20px; flex: none; fill: currentColor; }
-.btn-ghost { background: transparent; color: var(--text); border-color: #34403a; }
+.btn-ghost { background: transparent; color: var(--text); border-color: #463d33; }
 .btn-ghost:hover { border-color: var(--mint); }
 .btn-sm { min-height: 40px; padding: 0 16px; font-size: .8rem; border-radius: 10px; }
 .btn.shine::after { content: ""; position: absolute; inset: -50% auto -50% -60%; width: 40%; z-index: -1; background: linear-gradient(100deg, transparent, rgb(255 255 255 / .55), transparent); transform: skewX(-20deg); animation: shine 3.4s ease-in-out infinite 1s; }
@@ -36,9 +36,9 @@ a { color: inherit; }
 
 /* Tiles */
 .tile { position: relative; background: var(--tile); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; overflow: hidden; }
-.tile[data-spot]::after { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), rgb(159 227 193 / .10), transparent 60%); pointer-events: none; }
+.tile[data-spot]::after { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), rgb(230 203 160 / .10), transparent 60%); pointer-events: none; }
 .tile.mint { background: var(--mint); color: var(--mint-ink); border-color: var(--mint); }
-.tile.mint .lbl { color: #2f5a44; }
+.tile.mint .lbl { color: #6b5232; }
 .num { font: 800 clamp(2.4rem, 5vw, 3.8rem)/1 "Unbounded"; color: var(--mint); }
 .tile.mint .num { color: var(--mint-ink); }
 .outline { color: transparent; -webkit-text-stroke: 1.5px var(--mint); }
@@ -66,7 +66,7 @@ a { color: inherit; }
 
 /* Who */
 .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip { border: 1px solid #34403a; border-radius: 999px; padding: 12px 20px; font: 600 .95rem "Unbounded"; }
+.chip { border: 1px solid #463d33; border-radius: 999px; padding: 12px 20px; font: 600 .95rem "Unbounded"; }
 .chip.on { background: var(--mint); color: var(--mint-ink); border-color: var(--mint); }
 .pains { list-style: none; padding: 0; margin: 32px 0 0; border-top: 1px solid var(--line); }
 .pains li { display: grid; grid-template-columns: 52px 1fr; padding: 22px 0; border-bottom: 1px solid var(--line); font: 600 clamp(1.1rem, 2.4vw, 1.6rem)/1.3 "Unbounded"; }
@@ -79,7 +79,7 @@ a { color: inherit; }
 .h-card h3 { font: 600 1.3rem/1.2 "Unbounded"; margin: 0 0 8px; }
 .h-card p { color: var(--muted); margin: 0; }
 .h-card q { display: block; margin-top: 12px; color: var(--mint); font-size: .92rem; }
-.h-card.mint .n { -webkit-text-stroke-color: var(--mint-ink); } .h-card.mint p { color: #24432f; }
+.h-card.mint .n { -webkit-text-stroke-color: var(--mint-ink); } .h-card.mint p { color: #4a3820; }
 
 /* Cases */
 .cases { display: grid; gap: 10px; }
@@ -104,16 +104,16 @@ a { color: inherit; }
 .seats i { aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--mint); }
 .price { font: 800 clamp(2.6rem, 6vw, 4.4rem)/1 "Unbounded"; white-space: nowrap; margin: 10px 0 18px; }
 .incl { list-style: none; padding: 0; margin: 0 0 24px; }
-.incl li { padding: 10px 0 10px 28px; border-bottom: 1px solid rgb(8 19 13 / .15); position: relative; font-weight: 500; }
+.incl li { padding: 10px 0 10px 28px; border-bottom: 1px solid rgb(28 20 10 / .15); position: relative; font-weight: 500; }
 .incl li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 12px; height: 7px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); }
 .tile.mint .btn { background: var(--mint-ink); color: var(--mint); border-color: var(--mint-ink); }
-.tile.mint .btn-ghost { background: transparent; color: var(--mint-ink); border-color: rgb(8 19 13 / .35); }
+.tile.mint .btn-ghost { background: transparent; color: var(--mint-ink); border-color: rgb(28 20 10 / .35); }
 .note { font-size: .82rem; color: var(--muted); margin-top: 14px; }
 
 /* Marquee */
 .marquee { overflow: hidden; padding: 24px 0; }
 .marquee > div { display: flex; width: max-content; animation: marquee 26s linear infinite; }
-.marquee span { font: 800 clamp(2rem, 6vw, 4.4rem)/1 "Unbounded"; text-transform: uppercase; padding-right: 40px; color: transparent; -webkit-text-stroke: 1px #3b4740; white-space: nowrap; }
+.marquee span { font: 800 clamp(2rem, 6vw, 4.4rem)/1 "Unbounded"; text-transform: uppercase; padding-right: 40px; color: transparent; -webkit-text-stroke: 1px #4a4036; white-space: nowrap; }
 .marquee span:nth-child(3n+1) { color: var(--text); -webkit-text-stroke: 0; }
 
 footer { border-top: 1px solid var(--line); padding: 40px 16px 48px; }
@@ -122,7 +122,7 @@ footer .big { max-width: 1320px; margin: 0 auto 32px; font: 800 clamp(2.4rem, 9v
 
 /* Lightbox */
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 520px); max-height: 92vh; overflow: visible; }
-.lightbox::backdrop { background: rgb(5 7 6 / .88); backdrop-filter: blur(4px); }
+.lightbox::backdrop { background: rgb(17 15 12 / .88); backdrop-filter: blur(4px); }
 .lightbox img { max-height: 88vh; width: auto; border-radius: 16px; }
 .lightbox button { position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--mint); color: var(--mint-ink); font-size: 1.2rem; cursor: pointer; }
 
