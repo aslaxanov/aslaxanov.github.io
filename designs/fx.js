@@ -28,7 +28,7 @@
   // Trigger as soon as any part of an element crosses 90% of the screen height.
   // A percentage threshold ("20% visible") never fires for blocks taller than the
   // screen, e.g. a column of 6 cards on a phone, and they stay hidden forever.
-  const seen = { amount: "some", margin: "0px 0px -10% 0px" };
+  const seen = { amount: "some", margin: "100% 0px -10% 0px" };
 
   document.querySelectorAll("[data-split]").forEach((el) => {
     wrapWords(el);
