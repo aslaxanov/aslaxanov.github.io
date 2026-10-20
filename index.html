@@ -153,6 +153,20 @@
 .case { cursor: default; }
 .case-img.prof { height: auto; background: #110f0c; }
 .case-img.prof img { height: auto; object-fit: contain; }
+/* Bubble popup after 30 s */
+.bubble-pop { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; align-content: center; gap: 18px; padding: 20px; pointer-events: none; background: radial-gradient(circle at 50% 45%, rgb(17 15 12 / .8), rgb(17 15 12 / .45) 55%, rgb(17 15 12 / .15)); }
+.bubble-pop[hidden] { display: none; }
+.bubble { position: relative; width: min(62vw, 260px); aspect-ratio: 1; border-radius: 50%; padding: 6px; pointer-events: auto; cursor: pointer;
+  background: conic-gradient(from 200deg, #e6cba0, #f7e7c9, #bcd8e6, #ecc8dc, #f3e2b8, #e6cba0);
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / .75), 0 0 60px -10px rgb(230 203 160 / .45); }
+.bubble img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.bubble::after { content: ""; position: absolute; inset: 6px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 30% 24%, rgb(255 255 255 / .45), transparent 32%), radial-gradient(circle at 72% 82%, rgb(255 255 255 / .18), transparent 30%);
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / .25), inset 0 -18px 40px rgb(188 216 230 / .25); }
+.bubble-text { margin: 0; max-width: min(90vw, 420px); text-align: center; padding: 12px 20px; border-radius: 999px; background: var(--mint); color: var(--mint-ink);
+  font: 800 clamp(.95rem, 4.2vw, 1.2rem)/1.3 "Unbounded", sans-serif; text-transform: uppercase; box-shadow: 0 18px 40px -14px rgb(0 0 0 / .6); }
+.drop { position: fixed; z-index: 61; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 35% 30%, #fff, #e6cba0 60%, transparent 70%); }
 /* Final call to action */
 .final-cta { text-align: center; padding: clamp(80px, 12vw, 150px) 16px clamp(56px, 8vw, 96px); position: relative; overflow: hidden; }
 .final-cta::before { content: ""; position: absolute; left: 50%; top: 55%; width: 640px; height: 640px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgb(230 203 160 / .18), transparent 65%); pointer-events: none; }
@@ -243,9 +257,10 @@ footer.mini { text-align: center; color: var(--muted); font-size: .85rem; paddin
 </div></section>
 <footer class="mini">© 2026 Шамиль Аслаханов</footer>
 <a class="btn sticky-book" href="https://t.me/Aslaxanov?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.5 1.3Z"/></svg>Забронировать место</a>
+<div class="bubble-pop" hidden><div class="bubble" role="button" aria-label="Закрыть"><img src="img/bubble.jpg" alt="Шамиль Аслаханов"></div><p class="bubble-text">Действуй, хватит думать, мозгодел!</p></div>
 <dialog class="lightbox" aria-label="Скриншот отзыва"><img src="" alt="Скриншот отзыва"><button type="button" aria-label="Закрыть">✕</button></dialog>
 <script src="vendor/motion.js"></script>
-<script src="designs/fx.js"></script>
-<script src="main/main.js"></script>
+<script src="designs/fx.js?v=bubble"></script>
+<script src="main/main.js?v=bubble2"></script>
 </body>
 </html>
