@@ -60,13 +60,12 @@ if (clocks.length) {
   tick();
 }
 
-// Bubble popup: after 30 s on the page Shamil's photo inflates like a bubble, stays 4 s, then pops.
-// Once per visit (sessionStorage). Add ?bubble to the URL to see it after 1.5 s.
+// Bubble popup: 20 s after the visitor starts scrolling Shamil's photo inflates like a bubble, stays 3 s, then pops.
+// Shows on every page load. Add ?bubble to the URL to see it after 1.5 s without scrolling.
 (() => {
   const pop = document.querySelector(".bubble-pop");
   if (!pop) return;
   const force = location.search.includes("bubble");
-  try { if (!force && sessionStorage.getItem("bubbleShown")) return; } catch (e) {}
   const bubble = pop.querySelector(".bubble"), text = pop.querySelector(".bubble-text");
   const M = window.Motion;
   const calm = !M || matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -74,7 +73,6 @@ if (clocks.length) {
 
   const show = () => {
     if (document.hidden) { document.addEventListener("visibilitychange", show, { once: true }); return; }
-    try { sessionStorage.setItem("bubbleShown", "1"); } catch (e) {}
     pop.hidden = false;
     pop.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, fill: "both" });
     if (calm) {
@@ -84,7 +82,7 @@ if (clocks.length) {
       M.animate(text, { opacity: [0, 1], y: [16, 0], scale: [0.9, 1] }, { type: "spring", bounce: 0.4, visualDuration: 0.5, delay: 0.25 });
       floating = M.animate(bubble, { y: [0, -6, 0] }, { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 });
     }
-    timer = setTimeout(close, 4000 + 600);
+    timer = setTimeout(close, 3000 + 600);
   };
 
   const close = async () => {
@@ -115,5 +113,6 @@ if (clocks.length) {
   };
 
   bubble.addEventListener("click", close);
-  setTimeout(show, force ? 1500 : 30000);
+  if (force) setTimeout(show, 1500);
+  else addEventListener("scroll", () => setTimeout(show, 20000), { once: true, passive: true });
 })();
