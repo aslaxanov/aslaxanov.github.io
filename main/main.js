@@ -60,7 +60,7 @@ if (clocks.length) {
   tick();
 }
 
-// Bubble popup: 20 s after the visitor starts scrolling Shamil's photo inflates like a bubble, stays 3 s, then pops.
+// Bubble popup: 5 s after the visitor starts scrolling Shamil's photo inflates like a bubble, stays 3 s, then pops.
 // Shows on every page load. Add ?bubble to the URL to see it after 1.5 s without scrolling.
 (() => {
   const pop = document.querySelector(".bubble-pop");
@@ -114,5 +114,5 @@ if (clocks.length) {
 
   bubble.addEventListener("click", close);
   if (force) setTimeout(show, 1500);
-  else addEventListener("scroll", () => setTimeout(show, 20000), { once: true, passive: true });
+  else addEventListener("scroll", () => setTimeout(show, 5000), { once: true, passive: true });
 })();
